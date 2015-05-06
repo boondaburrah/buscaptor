@@ -1,8 +1,20 @@
 language: python
 python:
-    - "3.3"
+- '3.3'
 addons:
-    postgresql: "9.2"
+  postgresql: '9.2'
 install:
-    - "pip install -r requirements.txt"
+- pip install -r requirements.txt
 script: nosetests
+deploy:
+  provider: openshift
+  user:
+    secure: MRgzP1UCgJEsWZ1ogrFzm4hjGw4WOBpNDiBKGMEgLksuO68/VbkPapCh5wP0mTKdu5PwJ5e6WKzOE9WQ/aZbfjRnC2oT1i5U7ugk+7f5tZoH3NXWWs6tLQmhdl3V5eRcOzdXV8mRjXCEfQhl55Yn+kQKuEm+/8UJAGz57fcHHyI=
+  password:
+    secure: j5yEyQb79eY9+Ow0snQYISHkONYqFlSSMQKJSpHVtNRkgnH48j5zVXMaNMC4fXdu+z3AfnD65o+Z/9hk53/4+0Hy6lEMi9qHtP6fVGbTI4lATFt5ngeh6Qdr53F+84wxuBrtnRxpzrCeSR/E9bCQnMhTvOEiKY9e5CYLB+248hk=
+  app:
+    secure: awphE7InYop9mlTJr6tTCRgiww6yyXeZrJO64HpMgLT5Q2tCcWmvsSTcLJz1aR9h5BsKcaYNJdPjN5O8UMYXi+mR2xIg78AKU8mHYEdO9YbtU3bCELZIrhKP77s3j+2fq8G6pbUxxrwqQ3ahzmj36xK5JLDuIC8/YOCoJKlU5Dg=
+  domain:
+    secure: GH80oI2uurGl0BxUucc8WFXhU19Xlf/hJYzarre2UciUt1TJM7zpjJ7Opkk0ueUmpuOjWQwJkNa7yYq80tlj/AvROT7AaZ/UfBYtR3r33PmZR/MXR409lU7q0qyQ2RDI5cXX1TH9Qh5K4HomRdZCVo6+4ID9pHIRi1sRDLBvUtA=
+  on:
+    repo: boondaburrah/buscaptor
