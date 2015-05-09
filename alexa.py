@@ -16,5 +16,21 @@ class Intent:
 
 
 class Response:
-    def __init__(self, reply):
-        self.reply = reply
+    def __init__(self):
+        self.close_session = True
+        self.speech = dict()
+        self.card = dict()
+
+    def set_voice(self, text):
+        self.speech['type'] = "PlainText"
+        self.speech['text'] = text
+
+    def set_card(self, title, subtitle, text):
+        self.card['type'] = "Simple"
+        self.card['title'] = title
+        self.card['subtitle'] = subtitle
+        self.card['content'] = text
+
+    def set_close(self, yn):
+        self.close_session = yn
+
