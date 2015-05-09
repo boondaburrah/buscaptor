@@ -12,7 +12,10 @@ def say_hello():
 
 @app.route('/alexa', methods=['POST'])
 def handle_echo():
-    alexa = Intent(request.get_json(force=True))
+    try:
+        alexa = Intent(request.get_json(force=True))
+    except RuntimeError:
+        return "Not an intent"
     return alexa.get_type()
 
 if __name__ == '__main__':
