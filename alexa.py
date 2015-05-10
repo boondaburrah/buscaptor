@@ -14,6 +14,15 @@ class Intent:
     def get_type(self):
         return self.json_data['request']['intent']['name']
 
+    def get_slots(self):
+        slots = self.json_data['request']['intent']['slots']
+        for i in slots:
+            slots[i] = slots[i]['value']
+
+        return slots
+
+
+
 
 class Response:
     def __init__(self):

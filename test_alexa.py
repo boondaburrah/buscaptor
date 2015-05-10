@@ -1,6 +1,6 @@
 __author__ = 'lukeberr'
 from alexa import Intent
-import nose
+from nose.tools import assert_equal
 
 
 class test_alexa:
@@ -30,3 +30,7 @@ class test_alexa:
 
     def test_intent_detection(self):
         intent = Intent(self.sample_intent)
+
+    def test_get_slots(self):
+        intent = Intent(self.sample_intent)
+        assert_equal(intent.get_slots()['route'], 66, "Didn't get expected route slot.")
