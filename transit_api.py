@@ -17,7 +17,7 @@ class Transit:
                         + stop_id
                         + ".json?key="
                         + self.api_key).json()
-        pass
+        return Stop(stop_info, stop_arrivals)
 
     def get_stops(self, location):
         pass

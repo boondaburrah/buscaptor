@@ -18,3 +18,5 @@ deploy:
     secure: GH80oI2uurGl0BxUucc8WFXhU19Xlf/hJYzarre2UciUt1TJM7zpjJ7Opkk0ueUmpuOjWQwJkNa7yYq80tlj/AvROT7AaZ/UfBYtR3r33PmZR/MXR409lU7q0qyQ2RDI5cXX1TH9Qh5K4HomRdZCVo6+4ID9pHIRi1sRDLBvUtA=
   on:
     repo: boondaburrah/buscaptor
+env:
+- TRANSIT_API_KEY=TEST
